@@ -31,7 +31,6 @@ public class BaseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        Log.e("BaseApplication", "this is onCreate()");
         context = getApplicationContext();
         resource = context.getResources();
     }
@@ -54,6 +53,14 @@ public class BaseApplication extends Application {
         SharedPreferences pre = context().getSharedPreferences(preName,
                 Context.MODE_PRIVATE);
         return pre;
+    }
+
+    public static void deleteAllPreference(String preName) {
+        SharedPreferences sharedPreferences = context().getSharedPreferences(preName,
+                MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear();
+        editor.commit();
     }
 
     public static void set(String key, String value) {

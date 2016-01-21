@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/match_match"
+    android:orientation="vertical"
+    tools:context="com.ld.hui.lazytravel.SettingActivity"
+    android:background="@color/background">
+
+    <include layout="@layout/layout_top"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:clickable="true"
+        android:background="@drawable/selector_mine">
+
+        <TextView
+            style="@style/ww_color6_14sp_centerv"
+            android:text="新消息提醒"
+            android:layout_marginLeft="20dp"/>
+
+        <ImageView
+            style="@style/wrap_wrap"
+            android:src="@drawable/icon_go"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#dbdbdb"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:clickable="true"
+        android:background="@drawable/selector_mine">
+
+        <TextView
+            style="@style/ww_color6_14sp_centerv"
+            android:text="帮助与意见反馈"
+            android:layout_marginLeft="20dp"/>
+
+        <ImageView
+            style="@style/wrap_wrap"
+            android:src="@drawable/icon_go"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#dbdbdb"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:clickable="true"
+        android:background="@drawable/selector_mine">
+
+        <TextView
+            style="@style/ww_color6_14sp_centerv"
+            android:text="清除缓存"
+            android:layout_marginLeft="20dp"/>
+
+        <ImageView
+            style="@style/wrap_wrap"
+            android:src="@drawable/icon_go"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#dbdbdb"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:clickable="true"
+        android:background="@drawable/selector_mine">
+
+        <TextView
+            style="@style/ww_color6_14sp_centerv"
+            android:text="关于懒人旅行"
+            android:layout_marginLeft="20dp"/>
+
+        <ImageView
+            style="@style/wrap_wrap"
+            android:src="@drawable/icon_go"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#dbdbdb"/>
+
+    <TextView
+        android:id="@+id/tv_exit"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/bg_btn_longin"
+        android:textSize="16sp"
+        android:textColor="#ffffff"
+        android:text="退出登录"
+        android:gravity="center"/>
+
+</LinearLayout>

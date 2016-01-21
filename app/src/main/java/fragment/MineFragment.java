@@ -3,17 +3,22 @@ package fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.ld.hui.lazytravel.LoginActivity;
 import com.ld.hui.lazytravel.R;
+import com.ld.hui.lazytravel.SettingActivity;
+import com.squareup.otto.Subscribe;
 
 import base.BaseApplication;
+import utils.BusProvider;
 import utils.Constant;
 
 /**
@@ -27,6 +32,7 @@ public class MineFragment extends Fragment implements View.OnClickListener {
     private ImageView ivLeft;
     private TextView tvTitle;
     private TextView tvUserName;
+    private RelativeLayout rlSetting;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -43,20 +49,36 @@ public class MineFragment extends Fragment implements View.OnClickListener {
         ivLeft = (ImageView) view.findViewById(R.id.iv_left);
         tvTitle = (TextView) view.findViewById(R.id.tv_title);
         tvUserName = (TextView) view.findViewById(R.id.tv_user_name);
+        rlSetting = (RelativeLayout) view.findViewById(R.id.rl_setting);
     }
 
     private void bindViews() {
         llLogin.setOnClickListener(this);
+        rlSetting.setOnClickListener(this);
     }
 
     private void initData() {
+        BusProvider.getUIBusInstance().register(this);
         ivLeft.setVisibility(View.GONE);
         tvTitle.setText("我的");
+        initUserInfo();
+    }
 
-        if (BaseApplication.get(Constant.LOGIN_STATUS, false)) {
-            tvUserName.setText(BaseApplication.get(Constant.USER_NAME, "点击登录"));
+    private void initUserInfo() {
+        tvUserName.setText(BaseApplication.get(Constant.USER_NAME, "点击登录"));
+    }
+
+    @Subscribe
+    public void refresh(String str) {
+        if ("exit".equals(str)) {
+            initUserInfo();
         }
+    }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        BusProvider.getUIBusInstance().unregister(this);
     }
 
     @Override
@@ -68,6 +90,11 @@ public class MineFragment extends Fragment implements View.OnClickListener {
                     loginIntent.setClass(MineFragment.this.getActivity(), LoginActivity.class);
                     startActivity(loginIntent);
                 }
+                break;
+            case R.id.rl_setting:
+                Intent settingIntent = new Intent(MineFragment.this.getActivity(),
+                        SettingActivity.class);
+                startActivity(settingIntent);
                 break;
             default:
 
