@@ -46,6 +46,7 @@
         <activity android:name=".ScenicDetailActivity"></activity>
         <activity android:name=".BookTravelActivity"></activity>
         <activity android:name=".BookTrvelDetailActivity"></activity>
+        <activity android:name=".LoginActivity"></activity>
 
         <service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote">
             <intent-filter>

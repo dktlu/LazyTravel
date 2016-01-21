@@ -55,8 +55,7 @@ public class BookTravelAdapter extends BaseRecyclerAdapter<BaseRecyclerAdapter.B
         params.setMargins(Util.dip2px(context, 10), Util.dip2px(context, 10),
                 Util.dip2px(context, 10), 0);
         viewHolder.ivPic.setLayoutParams(params);
-        UrlImageViewHelper.setUrlDrawable(viewHolder.ivPic, data.getHeadImage(),
-                R.drawable.default_avatar);
+        UrlImageViewHelper.setUrlDrawable(viewHolder.ivPic, data.getHeadImage());
         viewHolder.tvTravelTitle.setText(data.getTitle());
         viewHolder.tvUserName.setText(data.getUserName());
         viewHolder.tvViewCount.setText(data.getViewCount() + "浏览");

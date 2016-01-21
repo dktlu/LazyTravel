@@ -65,6 +65,8 @@ public class TravelFragment extends Fragment {
     private List<TravelInfo> travelInfos;
     private LinearLayoutManager layoutManager;
     private WrapRecyclerView recyclerView;
+    private ImageView ivLeft;
+    private TextView tvTitle;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -77,6 +79,10 @@ public class TravelFragment extends Fragment {
     }
 
     private void initData() {
+
+        ivLeft.setVisibility(View.GONE);
+        tvTitle.setText("旅行");
+
         travelInfos = new ArrayList<>();
         String fileString = AppJsonFileReader.getJson(getActivity(), "travelinfo.json");
         Log.e(getActivity().getLocalClassName(), "fileString = " + fileString);
@@ -134,6 +140,8 @@ public class TravelFragment extends Fragment {
     private void initViews() {
         recyclerView = (WrapRecyclerView) view.findViewById(R.id.recyclerView);
         viewPager = (ViewPager) headerView.findViewById(R.id.vp);
+        ivLeft = (ImageView) view.findViewById(R.id.iv_left);
+        tvTitle = (TextView) view.findViewById(R.id.tv_title);
     }
 
     private class ViewPagerAdapter extends PagerAdapter {
