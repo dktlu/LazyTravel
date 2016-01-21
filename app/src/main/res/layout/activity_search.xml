@@ -50,6 +50,8 @@
             android:layout_toRightOf="@id/tv_location"
             android:background="@null"
             android:hint="搜索当地的景点"
+            android:inputType="text"
+            android:imeOptions="actionSearch"
             android:textSize="16sp"/>
 
         <View
