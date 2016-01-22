@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.ld.hui.lazytravel.AttentionFansActivity;
 import com.ld.hui.lazytravel.LoginActivity;
 import com.ld.hui.lazytravel.R;
 import com.ld.hui.lazytravel.SettingActivity;
@@ -33,6 +34,8 @@ public class MineFragment extends Fragment implements View.OnClickListener {
     private TextView tvTitle;
     private TextView tvUserName;
     private RelativeLayout rlSetting;
+    private TextView tvAttention;
+    private TextView tvFans;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -50,11 +53,15 @@ public class MineFragment extends Fragment implements View.OnClickListener {
         tvTitle = (TextView) view.findViewById(R.id.tv_title);
         tvUserName = (TextView) view.findViewById(R.id.tv_user_name);
         rlSetting = (RelativeLayout) view.findViewById(R.id.rl_setting);
+        tvAttention = (TextView) view.findViewById(R.id.tv_attention);
+        tvFans = (TextView) view.findViewById(R.id.tv_fans);
     }
 
     private void bindViews() {
         llLogin.setOnClickListener(this);
         rlSetting.setOnClickListener(this);
+        tvAttention.setOnClickListener(this);
+        tvFans.setOnClickListener(this);
     }
 
     private void initData() {
@@ -95,6 +102,16 @@ public class MineFragment extends Fragment implements View.OnClickListener {
                 Intent settingIntent = new Intent(MineFragment.this.getActivity(),
                         SettingActivity.class);
                 startActivity(settingIntent);
+                break;
+            case R.id.tv_attention:
+                Intent attentionIntent = new Intent(MineFragment.this.getActivity(),
+                        AttentionFansActivity.class);
+                startActivity(attentionIntent);
+                break;
+            case R.id.tv_fans:
+                Intent fansIntent = new Intent(MineFragment.this.getActivity(),
+                        AttentionFansActivity.class);
+                startActivity(fansIntent);
                 break;
             default:
 

@@ -51,7 +51,7 @@
             android:enabled="true"
             android:process=":remote">
             <intent-filter>
-                <action android:name="com.baidu.location.service_v2.2"></action>
+                <action android:name="com.baidu.location.service_v2.2" />
             </intent-filter>
         </service>
 
@@ -59,7 +59,8 @@
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="EWOcjlhf9PoNuE0eg25d0riX" />
 
-        <activity android:name=".SettingActivity"></activity>
+        <activity android:name=".SettingActivity" />
+        <activity android:name=".AttentionFansActivity"></activity>
     </application>
 
 </manifest>
