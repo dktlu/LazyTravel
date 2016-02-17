@@ -60,7 +60,9 @@
             android:value="EWOcjlhf9PoNuE0eg25d0riX" />
 
         <activity android:name=".SettingActivity" />
-        <activity android:name=".AttentionFansActivity"></activity>
+        <activity android:name=".AttentionFansActivity" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".PersonalCenterActivity"></activity>
     </application>
 
 </manifest>

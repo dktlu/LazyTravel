@@ -23,6 +23,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
     private TextView tvLogin;
     private EditText etUser;
     private EditText etPassword;
+    private TextView tvRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +40,13 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         tvLogin = (TextView) findViewById(R.id.tv_login);
         etUser = (EditText) findViewById(R.id.et_user);
         etPassword = (EditText) findViewById(R.id.et_password);
+        tvRegister = (TextView) findViewById(R.id.tv_register);
     }
 
     private void bindViews() {
         ivLeft.setOnClickListener(this);
         tvLogin.setOnClickListener(this);
+        tvRegister.setOnClickListener(this);
     }
 
     private void initData() {
@@ -63,6 +66,10 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                     Intent loginIntent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(loginIntent);
                 }
+                break;
+            case R.id.tv_register:
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
                 break;
             default:
                 break;

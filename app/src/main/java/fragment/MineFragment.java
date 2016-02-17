@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.ld.hui.lazytravel.AttentionFansActivity;
 import com.ld.hui.lazytravel.LoginActivity;
+import com.ld.hui.lazytravel.PersonalCenterActivity;
 import com.ld.hui.lazytravel.R;
 import com.ld.hui.lazytravel.SettingActivity;
 import com.squareup.otto.Subscribe;
@@ -34,6 +35,7 @@ public class MineFragment extends Fragment implements View.OnClickListener {
     private TextView tvTitle;
     private TextView tvUserName;
     private RelativeLayout rlSetting;
+    private RelativeLayout rlPersonalCenter;
     private TextView tvAttention;
     private TextView tvFans;
 
@@ -55,6 +57,7 @@ public class MineFragment extends Fragment implements View.OnClickListener {
         rlSetting = (RelativeLayout) view.findViewById(R.id.rl_setting);
         tvAttention = (TextView) view.findViewById(R.id.tv_attention);
         tvFans = (TextView) view.findViewById(R.id.tv_fans);
+        rlPersonalCenter = (RelativeLayout) view.findViewById(R.id.rl_personal_center);
     }
 
     private void bindViews() {
@@ -62,6 +65,7 @@ public class MineFragment extends Fragment implements View.OnClickListener {
         rlSetting.setOnClickListener(this);
         tvAttention.setOnClickListener(this);
         tvFans.setOnClickListener(this);
+        rlPersonalCenter.setOnClickListener(this);
     }
 
     private void initData() {
@@ -112,6 +116,11 @@ public class MineFragment extends Fragment implements View.OnClickListener {
                 Intent fansIntent = new Intent(MineFragment.this.getActivity(),
                         AttentionFansActivity.class);
                 startActivity(fansIntent);
+                break;
+            case R.id.rl_personal_center:
+                Intent centerIntent = new Intent(MineFragment.this.getActivity(),
+                        PersonalCenterActivity.class);
+                startActivity(centerIntent);
                 break;
             default:
 

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff">
+
+    <include layout="@layout/layout_top"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:background="@drawable/icon_default_background1"
+        android:gravity="center">
+
+        <view.CircleImageView
+            android:id="@+id/civ_head_photo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/default_avatar"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="傻"
+                android:textSize="16sp"
+                android:textColor="#ffffff"
+                android:layout_below="@+id/civ_head_photo"/>
+
+            <LinearLayout
+                android:id="@+id/ll_sexandage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/tv_name"
+                android:layout_below="@+id/civ_head_photo"
+                android:background="@drawable/bg_sexandagetag"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp">
+
+                <ImageView
+                    android:id="@+id/iv_gender"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/icon_boy"
+                    android:scaleType="fitCenter"/>
+
+                <TextView
+                    android:id="@+id/tv_age"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="26"
+                    android:textColor="#ffffff"
+                    android:textSize="10sp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:id="@+id/tv_attention"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="关注  0  "
+                android:textSize="12sp"
+                android:textColor="#ffffff"/>
+
+            <TextView
+                android:id="@+id/tv_fans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="|  粉丝  0"
+                android:textSize="12sp"
+                android:textColor="#ffffff" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="修改个人资料"
+            android:textSize="14sp"
+            android:textColor="#ffffff"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_update_info"
+            android:padding="5dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

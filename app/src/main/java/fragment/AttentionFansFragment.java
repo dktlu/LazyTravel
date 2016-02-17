@@ -1,17 +1,15 @@
 package fragment;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.ld.hui.lazytravel.R;
 
 import adapter.ViewPageFragmentAdapter;
+import base.BaseViewPagerFragment;
 
+/**
+ * 关注、粉丝viewpager页面
+ */
 public class AttentionFansFragment extends BaseViewPagerFragment {
 
 
@@ -21,15 +19,8 @@ public class AttentionFansFragment extends BaseViewPagerFragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_attention_fans, container, false);
-    }
-
-    @Override
     protected void onSetupTabAdapter(ViewPageFragmentAdapter adapter) {
-
+        String[] title = getResources().getStringArray(R.array.friends_viewpage_arrays);
     }
 
 }
